@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Column Control"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <columnTab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Column Control"
+                sling:resourceType="granite/ui/components/coral/foundation/container"
+                margin="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <columnGrid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        defaultValue="2"
+                        fieldLabel="Select Column Type"
+                        name="./columnNumber">
+                        <items jcr:primaryType="nt:unstructured">
+                            <col-two
+                                jcr:primaryType="nt:unstructured"
+                                text="Two Column"
+                                value="2"/>
+                            <col-three
+                                jcr:primaryType="nt:unstructured"
+                                text="Three Column"
+                                value="3"/>
+                            <col-four
+                                jcr:primaryType="nt:unstructured"
+                                text="Four Column"
+                                value="4"/>
+                            <col-five
+                                jcr:primaryType="nt:unstructured"
+                                text="Five Column"
+                                value="5"/>
+                            <col-six
+                                jcr:primaryType="nt:unstructured"
+                                text="Six Column"
+                                value="6"/>
+                        </items>
+                    </columnGrid>
+                </items>
+            </columnTab>
+        </items>
+    </content>
+</jcr:root>

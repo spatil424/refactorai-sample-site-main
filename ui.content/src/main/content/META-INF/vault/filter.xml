@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/dxp-lab" mode="merge"/>
+    <filter root="/content/dxp-lab" mode="merge"/>
+    <filter root="/content/dam/dxp-lab/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/dxp-lab" mode="merge"/>
+</workspaceFilter>

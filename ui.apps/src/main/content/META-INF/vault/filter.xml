@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/dxp-lab/clientlibs"/>
+    <filter root="/apps/dxp-lab/components"/>
+    <filter root="/apps/dxp-lab/i18n"/>
+    <!-- <filter root="/conf/dxp-lab/settings/wcm/templates"/>
+    <filter root="/content/dam/dxp-lab"/> -->
+</workspaceFilter>

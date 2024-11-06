@@ -1,0 +1,36 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2021 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+  <sly data-sly-use.model="com.dxplab.core.models.DxpCardModel">
+  <div class="dxp-card">
+    <!-- Display the text content if it's available -->
+    <div class="dxp-card-text">
+        <p>${model.textContent @ context='html'}</p>
+    </div>
+
+    <!-- Iterate over actionList to render each button or link -->
+    <div class="dxp-card-actions">
+        <ul>
+            <sly data-sly-list="${model.actionList}">
+                <li>
+                    <!-- Assuming the InnerLinksModel has fields like 'link' and 'title' -->
+                    <a href="${item.linkUrl}" class="dxp-card-button">${item.linkText}</a>
+                </li>
+            </sly>
+        </ul>
+    </div>
+</div>
+</sly>
+

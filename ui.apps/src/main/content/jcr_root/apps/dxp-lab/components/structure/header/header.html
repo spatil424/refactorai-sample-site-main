@@ -1,0 +1,65 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2021 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<!-- Assuming this is in a .html file and the model is properly set up -->
+<!-- <div class="global-footer">
+  <ul>
+      <sly data-sly-list="${pageDetailsList}">
+          <li >
+              <h2>${pageDetails.pageTitle}</h2>
+              <ul class="child-pages">
+                  <sly data-sly-list="${pageDetails.childPageList}">
+                      <li class="child-page">
+                          <a href="${childPage.childPageUrl}">${childPage.childPageTitle}</a>
+                          <ul class="sub-child-pages">
+                              <sly data-sly-list="${childPage.subChildPageList}">
+                                  <li class="sub-child-page">
+                                      <a href="${subChildPage.childPageUrl}">${subChildPage.childPageTitle}</a>
+                                  </li>
+                              </sly>
+                          </ul>
+                      </li>
+                  </sly>
+              </ul>
+          </li>
+      </sly>
+  </ul>
+</div> -->
+
+<sly data-sly-use.model="com.dxplab.core.models.GlobalHeaderModel"></sly>
+ 
+  <ul data-sly-list="${model.pageDetailsList}">
+    <li>
+      <sly data-sly-test="${item.pageUrl}">
+        <a href="${item.pageUrl}">${item.pageTitle}</a>
+    </sly>
+    <sly data-sly-test="${!item.pageUrl}">
+        ${item.pageTitle}
+    </sly>
+      <ul data-sly-list.childItem="${item.childPageList}">
+        <li>
+          <a href="${childItem.childPageUrl}">${childItem.childPageTitle}</a>
+            <ul >
+              <sly data-sly-list.subChild="${childItem.subChildPageList}">
+                  <li >
+                      <a href="${subChild.childPageUrl}">${subChild.childPageTitle}</a>
+                  </li>
+              </sly>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</sly>

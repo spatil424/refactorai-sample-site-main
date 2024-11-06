@@ -1,0 +1,34 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <id>distribution</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/dist</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+            <outputDirectory></outputDirectory>
+        </fileSet>
+    </fileSets>
+    <!-- Cloud Manager specific exclusion -->
+    <dependencySets>
+        <dependencySet>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <scope>runtime</scope>
+            <includes>
+                <include>**/**</include>
+            </includes>
+            <excludes>
+                <!-- Exclude unnecessary files for cloud environments -->
+                <exclude>META-INF/**</exclude>
+                <exclude>OSGI-INF/**</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+</assembly>
